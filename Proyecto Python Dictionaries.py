@@ -1,40 +1,5 @@
-#---------------------------------------------------
-#a partir del diccionario anterior creado con los nombres como Keys
-#modifico el mismo para que las Keys sean los años
-##def modify_keys_for_years(hurricane_data_base_updated,hurricane_data_base):
-   # for keys,values in hurricane_data_base.items():
-    #    year = values.pop("Year") #borro el key dentro del key y asigno a var
-    #    values["Nombre"] = keys #genero un nuevo key dentro del key, y le asigno al valor la var keys
-    #    hurricane_data_base_updated[year] = values #creo un nuevo key para mi diccionario principal (keys principales)
-    #    print(hurricane_data_base_updated)
-   # return hurricane_data_base_updated #devuelvo la nueva lista creada
-
-#modify_keys_for_years(hurricane_data_base_updated,hurricane_data_base)
-#esta funcion esta medio rota, me comio 8 huracanes en el medio
-
-#Our function iterates through each hurricane in our hurricanes dictionary, hurricanes, and records the year as current_year and the hurricane dictionary as current_cane.
-#We then check if current_year exists as a key in our new dictionary, and if not, initialize the value for that key [current_cane].
-#If current_year does exist as a key, current_cane is appended to the list stored in the key.
-
-#----------------------------------------------------
-#def probar_que_huracanes_estan(HDBU,names):
-#    i = 0
-#    hurricane_in = []
-#    for values in HDBU.values(): #itero los valores de la HDBU
-#        hurricane_in.append(values["Nombre"]) #voy agregandolos a nueva lista
-#    for name in names: #recorro los nombres de la lista nombres
-#        if name in hurricane_in: #si el nombre figura en la lista, buenas noticias
-#            print("El huracán: " + names[i] + " está dentro de la lista")
-#        else: #si el nombre no figura en la lista (como pasó), malas noticias
-#            print("El huracán: " + names[i] + " se tomó el buque !!!!!")
-#        i += 1
-#    print(hurricane_in)
-#    print("Los huracanes que se me escaparon de la galera son: " + str(len(names) - len(hurricane_in)) + " :(")
-
-
-
-
-
+#En este pequeño programa hago una serie de funciones para el análisis de datos obtenidos en relación a algunos 
+#Huracanes sucedidos a lo largo de la historia (almenos de los que se tienen registro)
 
 
 
@@ -61,8 +26,9 @@ areas_affected = [['Central America', 'Mexico', 'Cuba', 'Florida', 'The Bahamas'
 # deaths for each hurricane
 deaths = [90,4000,16,3103,179,184,408,682,5,1023,43,319,688,259,37,11,2068,269,318,107,65,19325,51,124,17,1836,125,87,45,133,603,138,3057,74]
 
-
 #--------------------------------------------
+
+#Armo la primer función, partiendo de los daños hechos en dólares, por lo que transformo los strings en floats
 # write your update damages function here:
     #armo la función de daños actualizados 
 damages_updated = [] #guardo lista fuera de la funcion
@@ -85,19 +51,20 @@ update_damages(damages)
 #hago que las Keys sean los nombres, y el resto de los datos los valores, generando
 #un diccionario dentro de otro
 
-hurricane_data_base = {}
+hurricane_data_base = {} #declaro mi diccionario por fuera para poder seguir utilizandolo sin necesidad de llamar la función
 def dictionary_construct(names,months,years,max_sustained_winds,areas_affected,deaths,damages_updated):
   i = 0
-  while i < 34 :
+  while i < 34 : #itero para los 34 datos correspondientes a cada huracán
     hurricane_data_base[names[i]] ={"Month": months[i], "Year": years[i], "Maximum Winds":max_sustained_winds[i], "Areas affected": areas_affected[i], "Deaths": deaths[i], "Damages": damages_updated[i]}
     i += 1
   #print(hurricane_data_base)
 dictionary_construct(names,months,years,max_sustained_winds,areas_affected,deaths,damages_updated)
-HDB = hurricane_data_base
+HDB = hurricane_data_base #simplifico el nombre de la base de datos que cree sobre huracanes
 #---------------------------------------------------
+
+
 #armo un diccionario otra vez, pero ésta vez con los años como Keys
 #reciclo código de la función anterior
-
 HDBU = {}
 def hurricane_by_year_dictionary(hurricanes_data_base): #armo nueva funcion que pone de Key los años
     hurricane_by_year = [] #armo lista vacía
@@ -249,8 +216,7 @@ def damage_scale_function(HDB):
     return damage_scale
 print(damage_scale_function(HDB))
 
-#--------------------------------------------------------------
-#la realizo con la HDB
+
 
 
 def find_mostdamage_cost(HDB):
