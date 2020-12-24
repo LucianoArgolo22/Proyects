@@ -1,5 +1,5 @@
 #En este pequeño programa hago una serie de funciones para el análisis de datos obtenidos en relación a algunos 
-#Huracanes sucedidos a lo largo de la historia (almenos de los que se tienen registro)
+#Huracanes sucedidos a lo largo de la historia 
 
 
 
@@ -64,7 +64,6 @@ HDB = hurricane_data_base #simplifico el nombre de la base de datos que cree sob
 
 
 #armo un diccionario otra vez, pero ésta vez con los años como Keys
-#reciclo código de la función anterior
 HDBU = {}
 def hurricane_by_year_dictionary(hurricanes_data_base): #armo nueva funcion que pone de Key los años
     hurricane_by_year = [] #armo lista vacía
@@ -79,7 +78,7 @@ def hurricane_by_year_dictionary(hurricanes_data_base): #armo nueva funcion que 
         hurricane_by_year = []  #reinicia la lista para evitar no repetir info
     return HDBU #devuelve la lista ya impecable
 hurricane_by_year_dictionary(HDB)
-#print(HDBU)
+#print(HDBU) #dejo como comentario los print de la mayoría de las funciones para en caso de probarla, no aparecer toda la información junta
 
 
 
@@ -113,13 +112,13 @@ def most_affected_area(AAC):
         if times > maximum : #comparo cada valor con el anterior para ver si es mayor o no
             maximum = times
             area = areas
-    #return print("\n Most often affected area is:" + area + " - " + str(maximum) + " times")
+    #print("\n Most often affected area is:" + area + " - " + str(maximum) + " times")
 most_affected_area(AAC)
 
 #--------------------------------------------------
 
 #armo funcion que determina cual fue el huracan mas peligroso en funcion de las
-#muertes, y asi mismo informo la cantidad de muertes ocasionadas por el mismo
+#muertes, y asi mismo informo la cantidad de muertes ocasionadas
 def most_dangerous_hurricane(hurricane_data_base):
     deaths_max = 0 #inicializo contador
     for keys,values in hurricane_data_base.items(): #itero entre los keys y los values
@@ -132,7 +131,7 @@ most_dangerous_hurricane(hurricane_data_base)
 
 #--------------------------------------------------
 
-# armo funcion que me pide segun mortalidad de los huracanes, y
+# armo funcion según mortalidad de los huracanes, y
 #armo nuevo diccionario
 mortality_scale = {}
 mortality_scale_organized = {}
@@ -167,7 +166,7 @@ def mortality_scale_dictionary(HDB):
 
     i = 0
     #creo que la parte más importante, la legibilidad, organiza los datos obtenidos
-    for keys in sorted(mortality_scale.keys()): #organizo las escalas como aparecen.
+    for keys in sorted(mortality_scale.keys()): #organizo las escalas de menor a mayor númericamente.
         mortality_scale_organized[keys] = mortality_scale[i] 
         i += 1
         
@@ -179,9 +178,9 @@ def mortality_scale_dictionary(HDB):
 
 mortality_scale_dictionary(HDB)
 
-#armo funcion que muestre escala de daños generados en dolares
+#armo funcion que muestre escala de daños generados en dólares
 damage_scale = {}
-damage_scale_organized = {}
+damage_scale_organized = {} # coloco ambos diccionarios por fuera de la función en caso de que quiera reutilizarlos
 def damage_scale_function(HDB):
     lista1 = [] #armo listas para guardar cada Huracán dentro de ellas
     lista2 = []
@@ -216,8 +215,7 @@ def damage_scale_function(HDB):
     return damage_scale
 print(damage_scale_function(HDB))
 
-
-
+#armo función que busque cual fue el huracan más destructivo, en daños generados en dólares.
 
 def find_mostdamage_cost(HDB):
     maxdamage = 0.0
