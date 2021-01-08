@@ -1,3 +1,8 @@
+#In this proyect you will find the dataset for you to use or see how the program works,
+#it's for data analysis of states in EEUU, remember to download and unzip de .rar file//
+#En este proyecto encontrarás un dataset para que puedas usar o ver como funciona el programa,
+#es para análisis de datos de los estados de EEUU, recuerdo descargar y unzippear el archivo .rar
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
