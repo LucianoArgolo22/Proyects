@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct 18 21:01:55 2020
-
-@author: Lucia
-"""
+#si bien no utilizo el lenguaje "inclusivo", el programa me pareció un tanto divertido de plantear
 
 frase = 'todos somos programadores'
 #frase = '¿cómo transmitir a los otros el infinito Aleph?'
