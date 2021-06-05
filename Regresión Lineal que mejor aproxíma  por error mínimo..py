@@ -29,23 +29,23 @@ def calculate_all_error(m,b,datapoints): #calculo la sumatoria de errores (no pr
         total_error_summ += calculate_error(m,b,point)
     return total_error_summ
 """
-#every point in this dataset lies upon y=x, so the total error should be zero: #puedo probar los puntos
+
 datapoints = [(1, 1), (3, 3), (5, 5), (-1, -1)]
 print(calculate_all_error(1, 0, datapoints))
 print('')
 
-#every point in this dataset is 1 unit away from y = x + 1, so the total error should be 4:#puedo probar los puntos
+
 datapoints = [(1, 1), (3, 3), (5, 5), (-1, -1)]
 print(calculate_all_error(1, 1, datapoints))
 print('')
 
-#every point in this dataset is 1 unit away from y = x - 1, so the total error should be 4:#puedo probar los puntos
+
 datapoints = [(1, 1), (3, 3), (5, 5), (-1, -1)]
 print(calculate_all_error(1, -1, datapoints))
 print('')
 
-#the points in this dataset are 1, 5, 9, and 3 units away from y = -x + 1, respectively, so total error should be
-# 1 + 5 + 9 + 3 = 18 #puedo probar los puntos
+
+
 datapoints = [(1, 1), (3, 3), (5, 5), (-1, -1)]
 print(calculate_all_error(-1, 1, datapoints))
 """
